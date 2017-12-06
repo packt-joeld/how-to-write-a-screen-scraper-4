@@ -37,8 +37,7 @@ def scrape_and_look_for_next_link(url):
     next_link = root.cssselect("a.next")
     print next_link
     if next_link:
-        next_url = urlparse.urljoin(base_url, \
-                   next_link[0].attrib.get('href'))
+        next_url = urlparse.urljoin(base_url, next_link[0].attrib.get('href'))
         print next_url
         scrape_and_look_for_next_link(next_url)
 # ----------------------------------------------------------------
