@@ -8,23 +8,24 @@ import scraperwiki
 import urlparse
 import lxml.html
 
-# scrape_table function: gets passed an individual page to scrape 
+# scrape_table function: gets passed an individual page to scrape
 def scrape_table(root):
 # selects all <tr blocks within <table class="data"
+    rows = root.cssselect("table.data tr")
     for row in rows:
         # Set up our data record - we'll need it later
         record = {}
         table_cells = row.cssselect("td")
-        if table_cells: 
+        if table_cells:
             record['Artist'] = table_cells[0].text
             record['Album'] = table_cells[1].text
             record['Released'] = table_cells[2].text
             record['Sales m'] = table_cells[4].text
             # Print out the data we've gathered
             print record, '------------'
-            # Finally, save the record to the datastore - 'Artist'
+            # Finally, save the record to the datastore - 'Artist' 
             #is our unique key
-            scraperwiki.datastore.save(["Artist"], record)
+            scraperwiki.sqlite.save(["Artist"], record)
 # scrape_and_look_for_next_link function: calls the scrape_table 
 #function, then hunts for a 'next' link: if one is found, calls 
 #itself again
