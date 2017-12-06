@@ -2,9 +2,9 @@ import scraperwiki
 import urlparse
 import lxml.html
 # scrape_table function: gets passed an individual page to scrape
-#def scrape_table(root):
+def scrape_table(root):
 # selects all <tr blocks within <table class="data"
-rows = root.cssselect("table.data tr")
+    rows = root.cssselect("table.data tr")
     for row in rows:
         # Set up our data record - we'll need it later
         record = {}
