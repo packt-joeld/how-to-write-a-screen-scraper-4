@@ -1,8 +1,8 @@
 ##################################################################
-START HERE: Tutorial 3: More advanced scraping. Shows how to 
-follow 'next' links from page to page: use functions, so you can 
-call the same code repeatedly. SCROLL TO THE BOTTOM TO SEE THE 
-START OF THE SCRAPER.
+#START HERE: Tutorial 3: More advanced scraping. Shows how to 
+#follow 'next' links from page to page: use functions, so you can 
+#call the same code repeatedly. SCROLL TO THE BOTTOM TO SEE THE 
+#START OF THE SCRAPER.
 ##################################################################
 import scraperwiki
 import urlparse
