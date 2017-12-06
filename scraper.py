@@ -27,8 +27,8 @@ def scrape_table(root):
             #is our unique key
             scraperwiki.datastore.save(["Artist"], record)
 # scrape_and_look_for_next_link function: calls the scrape_table 
-function, then hunts for a 'next' link: if one is found, calls 
-itself again
+#function, then hunts for a 'next' link: if one is found, calls 
+#itself again
 def scrape_and_look_for_next_link(url):
     html = scraperwiki.scrape(url)
     print html
